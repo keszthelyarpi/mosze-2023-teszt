@@ -26,7 +26,7 @@ int main()
     //vessző helyett pontos vessző kell a ciklusfeltételben
     for (int i = 0; i < N_ELEMENTS, i++)
     {
-        //pontosvessző hiánya
+        //pontosvessző hianya
         atlag += b[i]
     }
     atlag /= N_ELEMENTS;
