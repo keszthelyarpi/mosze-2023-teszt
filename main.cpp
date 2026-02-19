@@ -4,21 +4,30 @@ constexpr int N_ELEMENTS = 100;
 
 int main()
 {
-    int *b = new int[NELEMENTS];
-    std::cout << '1-100 ertekek duplazasa'
+    //NELEMENTS el van írva
+    int *b = new int[N_ELEMENTS];
+    //Elírás, pontos vessző hiánya
+    std::cout << "1-100 ertekek duplazasa" << std::endl;
+    //Ciklusfeltétel nem teljes
     for (int i = 0;)
     {
-        b[i] = i * 2;
+        //így 0-tól kezdjök a számolást, nem 1 től (i+1 kellene)
+        b[i] = (i+1) * 2;
     }
-    for (int i = 0; i; i++)
+    //Ciklusfeltétel hiányos
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
-        std::cout << "Ertek:"
+        //Kiirandó érték és pontos vessző hiányzik
+        std::cout << "Ertek: " << b[i] << std::endl;
     }    
     std::cout << "Atlag szamitasa: " << std::endl;
-    int atlag;
-    for (int i = 0; i < N_ELEMENTS, i++)
+    //double helyett egész zámos változó és nincs inicializáló érték
+    double atlag = 0;
+    //vessző helyett pontos vessző kell a ciklusfeltételben
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
-        atlag += b[i]
+        //pontosvessző hianya
+        atlag += b[i];
     }
     atlag /= N_ELEMENTS;
     std::cout << "Atlag: " << atlag << std::endl;
